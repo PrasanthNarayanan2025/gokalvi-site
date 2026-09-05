@@ -1,78 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Gokalvi is a fully offline AI tutor for TNPSC aspirants. Runs on your Android device. No accounts, no ads, no tracking.">
+<meta name="theme-color" content="#FFFDF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0B0F" media="(prefers-color-scheme: dark)">
 <title>Gokalvi &mdash; Offline AI Tutor for TNPSC Aspirants</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.6; }
-  h1 { font-size: 2.2em; margin-bottom: 0.2em; }
-  h2 { margin-top: 1.8em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-  .tagline { color: #666; font-size: 1.1em; margin-bottom: 2em; }
-  .pricing-box { background: #f7f7f7; border-left: 4px solid #0D47A1; padding: 16px 20px; margin: 1em 0; border-radius: 4px; }
-  .price { font-size: 1.4em; font-weight: 600; color: #0D47A1; }
-  ul { padding-left: 1.4em; }
-  li { margin: 0.4em 0; }
-  a { color: #0D47A1; }
-  footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #eee; font-size: 0.9em; color: #666; }
-  footer a { margin-right: 1em; }
-  .address { font-style: normal; margin-top: 1em; }
-</style>
+<link rel="canonical" href="https://gokalvi.com/">
+
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gokalvi">
+<meta property="og:url" content="https://gokalvi.com/">
+<meta property="og:title" content="Gokalvi &mdash; Offline AI Tutor for TNPSC Aspirants">
+<meta property="og:description" content="Gokalvi runs entirely on your device. No accounts, no ads, no tracking. Your study data stays with you.">
+<meta property="og:image" content="https://gokalvi.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gokalvi &mdash; Offline AI Tutor for TNPSC Aspirants">
+<meta name="twitter:description" content="Gokalvi runs entirely on your device. No accounts, no ads, no tracking.">
+<meta name="twitter:image" content="https://gokalvi.com/assets/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/gokalvi.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Gokalvi – TNPSC Tutor",
+  "operatingSystem": "Android",
+  "applicationCategory": "EducationalApplication",
+  "description": "Gokalvi is a fully offline AI tutor for TNPSC aspirants. Runs on your Android device. No accounts, no ads, no tracking.",
+  "url": "https://gokalvi.com/",
+  "image": "https://gokalvi.com/assets/og.png",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.prasa.tutor",
+  "inLanguage": ["en", "ta"],
+  "offers": [
+    { "@type": "Offer", "name": "Free tier", "price": "0", "priceCurrency": "INR", "category": "free" },
+    { "@type": "Offer", "name": "Pro monthly", "price": "99", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Pro yearly", "price": "999", "priceCurrency": "INR" }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gokalvi",
+    "email": "admin@gokalvi.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "D No 3/135, North Street, Eduthukkatti, Tarangambadi",
+      "addressLocality": "Nagapattinam",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "609312",
+      "addressCountry": "IN"
+    }
+  }
+}
+</script>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('gk-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      if (localStorage.getItem('gk-lang') === 'ta') document.documentElement.setAttribute('data-lang', 'ta');
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
-<h1>Gokalvi.</h1>
-<p class="tagline">Offline AI tutor for TNPSC aspirants. Built for Android. Privacy by design.</p>
+<a class="skip" href="#main">Skip to content</a>
 
-<h2>Available on Google Play</h2>
-<p>Gokalvi runs entirely on your device. No accounts, no ads, no tracking. Your study data stays with you.</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.prasa.tutor">View on Google Play &rarr;</a><br>
-<small>Public launch: 13 July 2026. Closed Testing preview available on request.</small></p>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/icon-192.png" alt="" width="34" height="34">
+      <span class="brand-name">Gokalvi</span>
+    </a>
 
-<h2>What&rsquo;s inside</h2>
-<ul>
-  <li>Samacheer Kalvi corpus, Classes 6&ndash;12 (bilingual Tamil + English)</li>
-  <li>TNPSC previous-year question search</li>
-  <li>Aptitude drills with bilingual MCQs and worked-example shortcuts</li>
-  <li>Second Brain &mdash; your own offline notes, voice memos, and images</li>
-  <li>Study Planner with FSRS-based spaced repetition</li>
-  <li>Current Affairs packs (opt-in updates)</li>
-</ul>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#inside" data-ta="உள்ளடக்கம்">What&rsquo;s inside</a>
+      <a href="#pricing" data-ta="கட்டணம்">Pricing</a>
+      <a href="#privacy" data-ta="தனியுரிமை">Privacy</a>
+      <a href="/support.html" data-ta="ஆதரவு">Support</a>
+    </nav>
 
-<h2>Pricing</h2>
-<div class="pricing-box">
-  <p><span class="price">Free tier</span> &mdash; core features, sample question banks, offline AI tutor (limited daily quota).</p>
-  <p><span class="price">Pro &mdash; &#8377;99/month</span> or <span class="price">&#8377;999/year</span> (saves &#8377;189)</p>
-  <p><strong>Includes 7-day free trial.</strong> Cancel any time from Google Play &rarr; Subscriptions. No card charged during trial.</p>
-  <p>Pro unlocks: full MCQ banks, unlimited AI tutor queries, mock tests, verified YouTube resource pack, structured PDF reader with bookmarks and progress tracking.</p>
-</div>
-<p>All payments processed by Google Play. Refunds handled per our <a href="/refund.html">Refund Policy</a>.</p>
+    <div class="nav-tools">
+      <button class="pill" id="langBtn" type="button" aria-label="Switch language">
+        <span id="langLabel">தமிழ்</span>
+      </button>
+      <button class="pill" id="themeBtn" type="button" aria-label="Switch colour theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm hide-sm" href="https://play.google.com/store/apps/details?id=com.prasa.tutor">Google Play</a>
+    </div>
+  </div>
+</header>
 
-<h2>Privacy is the product</h2>
-<p>Gokalvi does not collect personal data. The AI runs on your device. Read the full <a href="/privacy.html">Privacy Policy</a>.</p>
+<main id="main">
 
-<h2>Contact</h2>
-<p>Email: <a href="mailto:admin@gokalvi.com">admin@gokalvi.com</a></p>
-<p>Support response: within 72 hours (Monday&ndash;Saturday). See <a href="/support.html">Support</a>.</p>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="grid-lines" aria-hidden="true"></div>
 
-<address class="address">
-  <strong>Registered address:</strong><br>
-  Gokalvi (Proprietor: Rathnavathi)<br>
-  D No 3/135, North Street,<br>
-  Eduthukkatti, Tarangambadi,<br>
-  Nagapattinam, Tamil Nadu 609312,<br>
-  India
-</address>
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow">
+          <span class="dots pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span data-ta="Android &middot; முழுவதும் ஆஃப்லைன் &middot; கண்காணிப்பு இல்லை">Android &middot; Fully offline &middot; No tracking</span>
+        </span>
 
-<footer>
-  <a href="/privacy.html">Privacy</a>
-  <a href="/refund.html">Refund Policy</a>
-  <a href="/terms.html">Terms of Service</a>
-  <a href="/support.html">Support</a>
-  <a href="mailto:admin@gokalvi.com">Contact</a>
-  <p>&copy; 2026 Gokalvi. All rights reserved.</p>
+        <h1 class="display">Gokalvi<span class="sheen">.</span></h1>
+
+        <p class="lede" data-ta="TNPSC தேர்வர்களுக்கான, இணையம் இல்லாமல் இயங்கும் AI ஆசிரியர். Android-க்காக உருவாக்கப்பட்டது. தனியுரிமையே அடிப்படை.">Offline AI tutor for TNPSC aspirants. Built for Android. Privacy by design.</p>
+
+        <p class="lede-sub" data-ta="கோகல்வி முழுவதும் உங்கள் சாதனத்திலேயே இயங்குகிறது. கணக்குகள் இல்லை, விளம்பரங்கள் இல்லை, கண்காணிப்பு இல்லை. உங்கள் படிப்புத் தரவு உங்களிடமே இருக்கும்.">Gokalvi runs entirely on your device. No accounts, no ads, no tracking. Your study data stays with you.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.prasa.tutor" data-ta="Google Play-இல் காண்க &rarr;">View on Google Play &rarr;</a>
+          <a class="btn btn-ghost" href="#inside" data-ta="உள்ளடக்கம் &darr;">What&rsquo;s inside &darr;</a>
+        </div>
+
+        <p class="cta-note" data-ta="பொது வெளியீடு: 13 ஜூலை 2026. கோரிக்கையின் பேரில் மூடிய சோதனை முன்னோட்டம் கிடைக்கும்.">Public launch: 13 July 2026. Closed Testing preview available on request.</p>
+
+        <div class="chips">
+          <span class="chip b" data-ta="கணக்குகள் இல்லை">No accounts</span>
+          <span class="chip r" data-ta="விளம்பரங்கள் இல்லை">No ads</span>
+          <span class="chip y" data-ta="கண்காணிப்பு இல்லை">No tracking</span>
+          <span class="chip g" data-ta="ஆஃப்லைனில் இயங்கும்">Works offline</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="/assets/screen-home.png" width="560" height="898" alt="The Gokalvi home screen on an Android phone, showing bilingual Tamil and English study cards: PYQ Search, Flashcards, Mock Test, OMR Test, Verified Resources, Exam Patterns, New Words and Unit V Proverbs.">
+          </div>
+          <div class="badge-offline">
+            <span class="ring" aria-hidden="true"></span>
+            <span data-ta="ஆஃப்லைனில் இயங்குகிறது">Running offline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT'S INSIDE ================= -->
+  <section class="sec tinted" id="inside">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker"><span class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></span></span>
+        <h2 class="sec-title" data-ta="என்ன உள்ளடங்கியுள்ளது">What&rsquo;s inside</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card" style="--accent: var(--blue); --accent-tint: var(--tint-blue); --accent-ink: var(--ink-blue);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-1.8-1.6-4.2-2.2-7-2v12c2.8-.2 5.2.4 7 2 1.8-1.6 4.2-2.2 7-2V5c-2.8-.2-5.2.4-7 2Z"/><path d="M12 7v12"/></svg></div>
+          <h3 data-ta="சமச்சீர் கல்வித் தொகுப்பு">Samacheer Kalvi corpus</h3>
+          <p data-ta="வகுப்புகள் 6&ndash;12 (இருமொழி: தமிழ் + ஆங்கிலம்)">Classes 6&ndash;12 (bilingual Tamil + English)</p>
+        </article>
+
+        <article class="card" style="--accent: var(--red); --accent-tint: var(--tint-red); --accent-ink: var(--ink-red);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></div>
+          <h3 data-ta="TNPSC முந்தைய ஆண்டு வினாத் தேடல்">TNPSC previous-year question search</h3>
+        </article>
+
+        <article class="card" style="--accent: var(--yellow); --accent-tint: var(--tint-yellow); --accent-ink: var(--ink-yellow);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14"/><path d="M12 4v6"/><path d="M8 14h8"/><path d="M6.5 20h11a2 2 0 0 0 1.7-3l-4.2-7H9l-4.2 7a2 2 0 0 0 1.7 3Z"/></svg></div>
+          <h3 data-ta="திறனறிப் பயிற்சிகள்">Aptitude drills</h3>
+          <p data-ta="இருமொழி வினாக்களும், விடைகாணும் குறுக்குவழி எடுத்துக்காட்டுகளும்.">With bilingual MCQs and worked-example shortcuts</p>
+        </article>
+
+        <article class="card" style="--accent: var(--green); --accent-tint: var(--tint-green); --accent-ink: var(--ink-green);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a3 3 0 0 0-3 3 3 3 0 0 0-1.5 5.4A3 3 0 0 0 6 17.5a3 3 0 0 0 3 3 2.5 2.5 0 0 0 3-2.2V5.7A2.5 2.5 0 0 0 9 3.5Z"/><path d="M15 3.5a3 3 0 0 1 3 3 3 3 0 0 1 1.5 5.4A3 3 0 0 1 18 17.5a3 3 0 0 1-3 3 2.5 2.5 0 0 1-3-2.2V5.7a2.5 2.5 0 0 1 3-2.2Z"/></svg></div>
+          <h3 data-ta="இரண்டாம் மூளை">Second Brain</h3>
+          <p data-ta="உங்கள் சொந்தக் குறிப்புகள், குரல் குறிப்புகள், படங்கள் — அனைத்தும் ஆஃப்லைனில்.">Your own offline notes, voice memos, and images</p>
+        </article>
+
+        <article class="card" style="--accent: var(--blue); --accent-tint: var(--tint-blue); --accent-ink: var(--ink-blue);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m9.5 15.5 1.8 1.8 3.4-3.4"/></svg></div>
+          <h3 data-ta="படிப்புத் திட்டமிடல்">Study Planner</h3>
+          <p data-ta="FSRS அடிப்படையிலான இடைவெளித் திரும்பப் பயிற்சி முறையுடன்.">With FSRS-based spaced repetition</p>
+        </article>
+
+        <article class="card" style="--accent: var(--red); --accent-tint: var(--tint-red); --accent-ink: var(--ink-red);">
+          <div class="card-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/><circle cx="18.5" cy="16.5" r="3.5"/><path d="M18.5 15v1.8l1.2.9"/></svg></div>
+          <h3 data-ta="நடப்பு நிகழ்வுத் தொகுப்புகள்">Current Affairs packs</h3>
+          <p data-ta="(விருப்பத் தேர்வு புதுப்பிப்புகள்)">(opt-in updates)</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="sec" id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker"><span class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></span></span>
+        <h2 class="sec-title" data-ta="கட்டணத் திட்டம்">Pricing</h2>
+      </div>
+
+      <div class="price-grid">
+        <div class="plan">
+          <p class="plan-name" data-ta="இலவசத் திட்டம்">Free tier</p>
+          <p class="plan-price">&#8377;0</p>
+          <hr>
+          <p data-ta="அடிப்படை வசதிகள், மாதிரி வினா வங்கிகள், ஆஃப்லைன் AI ஆசிரியர் (நாள் ஒன்றுக்கு வரையறுக்கப்பட்ட அளவு).">Core features, sample question banks, offline AI tutor (limited daily quota).</p>
+        </div>
+
+        <div class="plan plan-pro">
+          <p class="plan-name" data-ta="புரோ">Pro</p>
+          <p class="plan-price">&#8377;99<small> / month</small></p>
+          <p class="plan-alt" data-ta="அல்லது &#8377;999/ஆண்டு (&#8377;189 சேமிப்பு)">or &#8377;999/year (saves &#8377;189)</p>
+
+          <div class="trial">
+            <span class="dots" aria-hidden="true" style="margin-top:6px;flex:0 0 auto"><span></span><span></span><span></span><span></span></span>
+            <span data-ta="&lt;strong&gt;7 நாள் இலவச சோதனைக் காலம் அடங்கும்.&lt;/strong&gt; Google Play &rarr; சந்தாக்கள் வழியாக எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். சோதனைக் காலத்தில் கட்டணம் எதுவும் வசூலிக்கப்படாது."><strong>Includes 7-day free trial.</strong> Cancel any time from Google Play &rarr; Subscriptions. No card charged during trial.</span>
+          </div>
+
+          <p class="unlocks-lead" data-ta="புரோ திறக்கும் வசதிகள்:">Pro unlocks:</p>
+          <ul class="unlocks">
+            <li data-ta="முழு வினா வங்கிகள்">full MCQ banks</li>
+            <li data-ta="வரம்பற்ற AI ஆசிரியர் வினாக்கள்">unlimited AI tutor queries</li>
+            <li data-ta="மாதிரித் தேர்வுகள்">mock tests</li>
+            <li data-ta="சரிபார்க்கப்பட்ட YouTube வளத் தொகுப்பு">verified YouTube resource pack</li>
+            <li data-ta="புத்தகக்குறி மற்றும் முன்னேற்றக் கண்காணிப்புடன் கூடிய கட்டமைக்கப்பட்ட PDF வாசிப்பான்">structured PDF reader with bookmarks and progress tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="pay-note" data-ta="அனைத்துக் கட்டணங்களும் Google Play மூலம் செயலாக்கப்படுகின்றன. பணத்திரும்பப்பெறுதல் எங்கள் &lt;a href=&quot;/refund.html&quot;&gt;பணத்திரும்பக் கொள்கையின்&lt;/a&gt;படி கையாளப்படும்.">All payments processed by Google Play. Refunds handled per our <a href="/refund.html">Refund Policy</a>.</p>
+    </div>
+  </section>
+
+  <!-- ================= PRIVACY ================= -->
+  <section class="sec" id="privacy">
+    <div class="wrap">
+      <div class="privacy-band">
+        <div class="inner">
+          <h2 data-ta="தனியுரிமையே எங்கள் தயாரிப்பு">Privacy is the product</h2>
+          <p data-ta="கோகல்வி தனிப்பட்ட தரவுகளைச் சேகரிப்பதில்லை. AI உங்கள் சாதனத்திலேயே இயங்குகிறது.">Gokalvi does not collect personal data. The AI runs on your device.</p>
+          <a class="btn btn-ghost" href="/privacy.html" data-ta="முழு தனியுரிமைக் கொள்கையைப் படிக்க &rarr;">Read the full Privacy Policy &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="sec tinted" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker"><span class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></span></span>
+        <h2 class="sec-title" data-ta="தொடர்பு">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info-block">
+          <h3 data-ta="மின்னஞ்சல்">Email</h3>
+          <p class="mail"><a href="mailto:admin@gokalvi.com">admin@gokalvi.com</a></p>
+          <p data-ta="ஆதரவு பதில்: 72 மணி நேரத்திற்குள் (திங்கள்&ndash;சனி). &lt;a href=&quot;/support.html&quot;&gt;ஆதரவு&lt;/a&gt; பக்கத்தைக் காண்க.">Support response: within 72 hours (Monday&ndash;Saturday). See <a href="/support.html">Support</a>.</p>
+        </div>
+
+        <div class="info-block">
+          <h3 data-ta="பதிவு செய்யப்பட்ட முகவரி">Registered address</h3>
+          <address>
+            Gokalvi (Proprietor: Rathnavathi)<br>
+            D No 3/135, North Street,<br>
+            Eduthukkatti, Tarangambadi,<br>
+            Nagapattinam, Tamil Nadu 609312,<br>
+            India
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <a class="brand" href="/">
+        <img class="brand-mark" src="/assets/icon-192.png" alt="" width="34" height="34">
+        <span class="brand-name">Gokalvi</span>
+      </a>
+      <nav class="foot-links" aria-label="Legal">
+        <a href="/privacy.html" data-ta="தனியுரிமை">Privacy</a>
+        <a href="/refund.html" data-ta="பணத்திரும்பக் கொள்கை">Refund Policy</a>
+        <a href="/terms.html" data-ta="சேவை விதிமுறைகள்">Terms of Service</a>
+        <a href="/support.html" data-ta="ஆதரவு">Support</a>
+        <a href="mailto:admin@gokalvi.com" data-ta="தொடர்பு">Contact</a>
+      </nav>
+    </div>
+    <p class="copy">&copy; 2026 Gokalvi. All rights reserved.</p>
+  </div>
 </footer>
+
+<script src="/assets/gokalvi.js" defer></script>
 
 </body>
 </html>
