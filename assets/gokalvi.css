@@ -266,6 +266,13 @@ h1.display {
 .lede { font-size: clamp(1.08rem, 2.1vw, 1.32rem); color: var(--ink-2); max-width: 33ch; text-wrap: balance; margin: 0 0 16px; line-height: 1.55; }
 .lede-sub { font-size: 1rem; color: var(--muted); max-width: 44ch; margin: 0 0 30px; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+/* Official Google Play badge. The asset ships with Google's required clear
+   space baked in (41px of the 250px height); never crop or restyle it - the
+   negative margin only pulls that transparent margin off the text column. */
+.play-badge { display: inline-block; line-height: 0; margin-left: -15px; transition: transform .2s var(--ease); }
+.play-badge:hover { transform: translateY(-2px); text-decoration: none; }
+.play-badge img { height: 92px; width: auto; }
+@media (max-width: 700px) { .play-badge img { height: 80px; } .play-badge { margin-left: -13px; } }
 .cta-note { font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
