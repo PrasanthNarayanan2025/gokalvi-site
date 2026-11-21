@@ -568,3 +568,7 @@ html[data-lang="ta"] .lede, html[data-lang="ta"] .card p, html[data-lang="ta"] .
   .nav, .aurora, .grid-lines, .stage, .foot { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+/* 2026-11-21: stop sideways scroll on phones (decorative layers wider than the screen) */
+html, body { overflow-x: clip; }
+@supports not (overflow: clip) { html, body { overflow-x: hidden; } }
