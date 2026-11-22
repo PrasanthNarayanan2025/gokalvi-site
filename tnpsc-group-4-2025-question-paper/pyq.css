@@ -77,6 +77,10 @@ details.a .in{padding:0 14px 14px}
 .cta{position:relative;display:block;border-radius:22px;padding:18px;margin:22px 0 14px;text-decoration:none;color:#fff;background:linear-gradient(120deg,#1a73e8,#4285F4 45%,#34A853);box-shadow:0 14px 30px -18px rgba(26,115,232,.9);overflow:hidden}
 .cta b{display:block;font-size:1.05rem;line-height:1.55}
 .cta span{display:inline-block;margin-top:10px;background:#fff;color:#1a73e8;border-radius:999px;padding:7px 14px;font-weight:700;font-size:.88rem}
+.more{display:flex;gap:14px;align-items:center;flex-wrap:wrap;border-radius:20px;padding:14px 16px;margin:0 0 18px;background:color-mix(in srgb,var(--y) 14%,var(--card));border:1px solid color-mix(in srgb,var(--y) 55%,transparent)}
+.more p{margin:0;flex:1 1 240px;font-weight:600;line-height:1.6}
+.more p small{display:block;font-weight:400;color:var(--sub);font-size:.8rem;margin-top:2px}
+.more .btn{flex:0 0 auto}
 .hub{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));margin-bottom:18px}
 .hub .q{margin:0}
 .hub h2{font-size:1.05rem;margin:0 0 4px}
